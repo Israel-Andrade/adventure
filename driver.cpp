@@ -15,7 +15,7 @@ double diegoDiscount();
 
 int main()
 {
-    
+     
 }
 char menu()
 {
@@ -51,6 +51,7 @@ double spelunk()
     int baseCharge;
     int rentalDays;
     double total;
+    double subtotal;
     double finalTotal;
     
     cout << "Please input the number of people that are in your party: " << endl;
@@ -59,19 +60,21 @@ double spelunk()
     cout << "Please input the number of days your party will rent the equipment: " << endl;
     cin >> rentalDays;
     
-    equipmentRental = numberPeople  * (40 * rentalDays);
+    equipmentRental = numberPeople  * 40 * rentalDays;
     
     baseCharge = numberPeople * 700;
    
-    total = equipmentRental + baseCharge;
-   
     if (numberPeople >= 5)
     {
-        finalTotal = total * diegoDiscount();
+        subtotal = baseCharge * diegoDiscount();
+        total = baseCharge - subtotal;
+        finalTotal = equipmentRental + total;
+        
         return finalTotal;
     } 
     else
     {
+        total = baseCharge + equipmentRental;
         return total;
     }
 }
