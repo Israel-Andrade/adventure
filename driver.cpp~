@@ -15,7 +15,10 @@ double diegoDiscount();
 
 int main()
 {
-    
+    cout << spelunk () << endl;
+    //assert(spelunk() == ) 
+
+    return 0;
 }
 char menu()
 {
