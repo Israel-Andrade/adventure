@@ -85,17 +85,62 @@ char menu()
 }
 double climbing()
 {
-
-
-
-
+    double finalRate;
+    double baseCharge;
+    double needClimbingInstructor;
+    double equipmentRental;
+    double numsOfPeople;
+    double numsOfDays;
+    
+    cout << "How many individuals are attending the Devil's Courthouse Adventure weekend" << endl;
+    cin >> numsOfPeople;
+    cout << "How many days will you be renting the climbing equipment" << endl;
+    cin >> equipmentRental;
+    cout << "How many people need a climbing instructor" << endl;
+    cin >> needClimbingInstructor;
+    
+    if(numsOfPeople >= 5)
+    {
+        baseCharge = (350 * numsOfPeople);
+        needClimbingInstructor = (100 * numsOfPeople);
+        equipmentRental = (40 * numsOfDays) * (numsOfPeople);
+        finalRate = (baseCharge + needClimbingInstructor +  equipmentRental);
+        return diegoDiscount(finalRate);
+    }
+    
+    finalRate = (baseCharge + needClimbingInstructor +  equipmentRental);
+    return finalRate;
 }
 double scuba()
 {
 
+/* Scuba Bahama: A week long cruise to the Bahamas with three days of scuba diving. Those with prior experience may dive right in, while beginners should choose to take optional, but very affordable lessons.
 
-
-
+Rate:
+	Base Charge:		$1000 per person
+	Scuba Instruction:	$100 per person
+*/
+    const double BASE_CHARGE = 1000;
+    const double SCUBA_INSTRUCTION = 100;
+    double finalRate, numsOfPeople, scubaLessons;
+    
+    cout << "Welcome to Scuba Bahama!" << endl;
+    cout << "How many people will be attending our cruise" << endl;
+    cin >> numsOfPeople;
+    cout << "How many in your party would like to participate in Scuba Lessons" << endl;
+    cin >> scubaLessons;
+    
+    scubaLessons = (numsOfPeople * SCUBA_INSTRUCTION);
+    
+    if(numsOfPeople >= 5)
+    {
+        finalRate = (BASE_CHARGE * numsOfPeople) + scubaLessons;
+        return diegoDiscount(finalRate);
+    }
+    
+    finalRate = (BASE_CHARGE * numsOfPeople) + scubaLessons;
+    return finalRate;
+    
 }
 double skyDive()
 {
