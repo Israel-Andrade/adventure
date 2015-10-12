@@ -7,14 +7,9 @@
 using namespace std;
 
 char menu();
-//Precondition: Displays four options of adventures
-//Postcondition: Returns the character of the one choosen
 double climbing();
 double scuba();
 double skyDive();
-//Precondition: Ask the user for amount of people attending
-//and the number of attendees staying at the luxury inn or Wilderness Lodge
-//Postcondition: Returns the price for the skyDive option
 double spelunk();
 double diegoDiscount();
 
@@ -22,7 +17,7 @@ int main()
 {
 
 
-    return 0;
+
 }
 char menu()
 {
